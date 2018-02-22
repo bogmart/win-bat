@@ -1,0 +1,1 @@
+ftp -n -s:C:\WINDOWS\BAT\rem.txt %1

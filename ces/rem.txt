@@ -1,0 +1,46 @@
+user a
+a
+prompt
+bin
+
+
+cd /ide0/V08_00.049/acctlog
+mdel *.dat
+
+cd /ide0/V08_00.049/config
+mdel cfg*.dat
+del flash.dat
+
+cd /ide0/V08_00.049/dhcp
+mdel dhcpd*.*
+
+cd /ide0/V08_00.049/log
+mdel 200*.*
+
+cd /ide0/V08_00.049/radius
+del journal.dat
+del stoptime.dat
+
+cd /ide0/V08_00.049/slapd/db
+mput e:\rem_49\*
+
+cd /ide0/V08_00.049/slapd
+mdel slapd.arg
+rmdir logs
+rmdir ssl
+
+cd /ide0/V08_00.049/ssh
+mdel /V08_00.049/ssh/dsa*.*
+mdel /V08_00.049/ssh/rsa*.*
+
+del /ide0/V08_00.049/boot.dat
+del /ide0/V08_00.049/upgrade.dat
+
+
+bye
+put s:\malibu\server\kernel\target\config\pc486cmp\vxworks.str /ide0/V08_00.049/bin/vxworks
+bye
+put e:\rem_vx_38\vxworks /ide0/V08_00.049/bin/vxworks
+bye
+
+

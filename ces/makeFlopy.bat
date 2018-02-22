@@ -1,0 +1,1 @@
+make build_debug=no build_reduced_symbols=yes build_manufacturing_image=yes
