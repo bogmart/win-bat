@@ -215,8 +215,8 @@ GOTO START_UPDATE
 
 :HELP
     echo.
-    ECHO usage:     %0  [HAC_IP_Address] [HAC_HW] [HAC_SW_VER] [HAC_SW_DBG]
-    ECHO       ( default:   IP: %hac_ip%     %hac_sw%      %hac_sw_ver% )
+    ECHO usage:     %0  [HAC_IP_Address]  [HAC_HW]  [HAC_SW_VER]               [HAC_SW_DBG]
+    ECHO       ( default:   IP: %hac_ip%      %hac_sw%       %hac_sw_ver%   "linkd" )
 	ECHO        HAC_SW_VER: p5_shine   ^|  p5_shine_v5
 	ECHO        HAC_SW_DBG: 0 ^| 2 ^| 6 ^| 00
     echo.
