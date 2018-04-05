@@ -63,9 +63,17 @@ IF NOT .%2. == ..   GOTO HAC_SW_DBG
     echo copy  \%hac_sw_ver%\%hac_hw%%hac_sw_dbg%\images\%hac_sw%.bin  to  %dst_media%\%dst_file%
     cp  --preserve %path_bin_file%   %dst_media%/%dst_file%
     call stat %dst_media%/%dst_file%  | grep "Modify:"
+	
+:CHECK_FIRMWARE
+	diff %path_bin_file%  %dst_media%/%dst_file%
+	IF %ERRORLEVEL% NEQ 0  (
+		echo BAD copy! Try again...
+		GOTO CP_FIRMWARE
+	)
 
 :EJECT_MEDIA
-    call "C:\Program Files (x86)\USBDiskEjector\USB_Disk_Eject.exe" /CLOSEAPPSFORCE /REMOVELETTER  %dst_media% 
+    sleep 1
+	call "C:\Program Files (x86)\USBDiskEjector\USB_Disk_Eject.exe" /CLOSEAPPSFORCE /REMOVELETTER  %dst_media% 
 
 :GET_TIME
     call getTimeEnd.bat
