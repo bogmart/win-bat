@@ -24,6 +24,12 @@ ECHO it  - imx25   - thunderbolt
 ECHO a   - am57xx  - all
 ECHO ae  - am57xx  - enduro
 ECHO ah  - am57xx  - helix4
+ECHO.
+ECHO MASTER branch
+ECHO a_m  - am57xx  - all
+ECHO ae_m - am57xx  - enduro
+ECHO ms_m - am57xx  - stardust
+ECHO.
 ECHO q - EXIT
 ECHO.
 
@@ -72,6 +78,19 @@ IF .%M%.==.ae. (
 IF .%M%.==.ah. (
   set pathCopySrc=target_p5\am57xx\helix4
   set pathCopyDst=target_p5\am57xx
+  )
+
+IF .%M%.==.a_m. (
+  set pathCopySrc=target_p5_master\am57xx
+  set pathCopyDst=target_p5_master
+  )
+IF .%M%.==.ae_m. (
+  set pathCopySrc=target_p5_master\am57xx\enduro
+  set pathCopyDst=target_p5_master\am57xx
+  )
+IF .%M%.==.ms_m. (
+  set pathCopySrc=target_p5_master\mpc8314\stardust
+  set pathCopyDst=target_p5_master\mpc8314
   )
 
 IF .%M%.==.q.   GOTO END

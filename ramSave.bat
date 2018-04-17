@@ -1,9 +1,18 @@
-@echo off
+::@echo off
+
+::Examples:
+:: ramSave
+:: ramSave  target_p5_master
 
 SETLOCAL  ENABLEDELAYEDEXPANSION
 
 set pathBaseFrom=v:\target_p5
 set pathBaseTo=d:\RAM_drive_temp
+
+
+IF NOT .%1. == .. do (
+  set pathBaseFrom=v:\%1
+  )
 
 call getTime.bat
 
