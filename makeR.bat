@@ -50,7 +50,7 @@ set /a token_start = 3
             ) else (
             ::update VERSION variable
             IF "!token:~0,7!" == "VERSION" (
-                set versionName=!token:~8,6! 
+                set versionName=!token:~8,7! 
                 rem echo version %versionName%
             ) else (
             ::update WEB_BUILD variable
