@@ -69,7 +69,7 @@ IF .%target:~0,10%. == .copytoaca_. goto COPY
 
 :STOP_WINDOWS_DEFENDER
   ::service: svchost.exe -k secsvcs
-  sc stop WinDefend 1>&0
+  ::sc stop WinDefend 1>&0
 
 :MAKE
   echo.
@@ -135,7 +135,7 @@ IF .%target:~0,10%. == .copytoaca_. goto COPY
   GOTO END
 
 :END
-  sc start WinDefend 1>&0
+  ::sc start WinDefend 1>&0
 
 ENDLOCAL
 
