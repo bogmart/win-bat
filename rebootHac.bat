@@ -22,7 +22,7 @@ IF .%hac_ip%.==.. GOTO HELP
 
 :HELP
    echo.
-   ECHO usage:     %0  [HAC_IP (Platform4)]
+   ECHO usage:     %0  [HAC_IP]
    echo.
    @ECHO OFF
    GOTO END
