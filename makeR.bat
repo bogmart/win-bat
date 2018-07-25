@@ -161,12 +161,15 @@ IF .%target:~0,10%. == .copytoaca_. goto COPY
   ECHO        %0  rsp    copytoaca_f 
   ECHO        %0  rsp    copytoaca_f DEBUG=0
   ECHO   ( default:  %hw%    %target%         LOG_CONSOLE=%logConsole% SPEED=%speed% DEBUG=%debug% VERSION=%versionName%)
-  ECHO     Note: 
+  echo.
+  ECHO     Note:
   ECHO       Bitwise debug flags:  1: -DDEBUG
   ECHO                             2: -g -ggdb
   ECHO                             4: -O0
   ECHO                             8: no -Werror
-  ECHO                             16: cUnit framework included  
+  ECHO                             16: cUnit framework included
+  echo.
+  ECHO       SHINE_SHARED_DIR e.g. SHINE_SHARED_DIR=S:/bogmart_workbench/p5_hirschmann_shared_master
   echo.
   @ECHO OFF
   GOTO END
