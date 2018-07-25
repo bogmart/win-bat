@@ -34,6 +34,9 @@ IF NOT EXIST %dst_media%\ (
     set dst_media=I:
     )
 IF NOT EXIST %dst_media%\ (
+    set dst_media=L:
+    )
+IF NOT EXIST %dst_media%\ (
     GOTO NO_USB
     )
 
@@ -53,7 +56,9 @@ IF NOT .%2. == ..   GOTO HAC_SW_DBG
 	set hac_sw=%1
 	::parse image name, e.g: rsp-PRP_FACTORY
     for /f "delims=-" %%a in ("%1") do set hac_hw=%%a
-	for /f "delims=_ tokens=1,2" %%a in ("%hac_hw%") do set hac_hw=%%a_%%b
+    for /f "delims=_ tokens=1,2" %%a in ("%hac_hw%") do (
+      IF NOT .%%b. == .. set hac_hw=%%a_%%b
+    )
 
 :SET_PATH_BIN_FILE
     set path_bin_file=%path_bin_folder%\%hac_sw_ver%\%hac_hw%%hac_sw_dbg%\images\%hac_sw%.bin
@@ -73,7 +78,7 @@ IF NOT .%2. == ..   GOTO HAC_SW_DBG
 
 :EJECT_MEDIA
     sleep 1
-	call "C:\Program Files (x86)\USBDiskEjector\USB_Disk_Eject.exe" /CLOSEAPPSFORCE /REMOVELETTER  %dst_media% 
+	call "C:\Program File Portables\USBDiskEjector\USB_Disk_Eject.exe" /CLOSEAPPSFORCE /REMOVELETTER  %dst_media% 
 
 :GET_TIME
     call getTimeEnd.bat
